@@ -4,7 +4,7 @@ A simple and clean Todo application built with Vue.js.
 This app allows users to add, edit, complete, and delete tasks.
 
 ## 🚀 Live Demo
-🔗 https://your-live-demo-link.netlify.app
+🔗 https://todolistappvue3.netlify.app/
 
 ## 🛠️ Built With
 - Vue.js
