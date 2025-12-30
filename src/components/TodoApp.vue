@@ -4,34 +4,40 @@
       <h1 class="text-center mb-5 app-title">My Vue ToDo App</h1>
 
       <!-- Input and Button -->
-      <div class="d-flex mb-4">
-        <input
-          ref="taskInput"
-          v-model="task"
-          type="text"
-          placeholder="Enter Task"
-          class="form-control me-2 flex-grow-1 task-input shadow-none"
-          @keyup.enter="submitTask"
-        />
-        <button
-          @click="submitTask"
-          class="btn btn-warning rounded-0 fw-bold px-4 shadow-none"
-        >
-          Add Task
-        </button>
-        <button
-          @click="toggleDarkMode"
-          class="btn ms-2 border-0 shadow-none theme-toggle"
-          type="button"
-          aria-label="Toggle Theme"
-        >
-          <span v-if="isDarkMode" key="sun">
-            <i class="fa-solid fa-sun text-warning fs-3"></i>
-          </span>
-          <span v-else key="moon">
-            <i class="fa-solid fa-moon text-dark fs-3"></i>
-          </span>
-        </button>
+      <div class="input-section mb-4">
+        <div class="row g-2">
+          <div class="col">
+            <input
+              ref="taskInput"
+              v-model="task"
+              type="text"
+              placeholder="Enter Task"
+              class="form-control task-input shadow-none"
+              @keyup.enter="submitTask"
+            />
+          </div>
+          <div class="col-auto d-flex gap-2">
+            <button
+              @click="submitTask"
+              class="btn btn-warning rounded-0 fw-bold px-3 px-sm-4 shadow-none add-btn"
+            >
+              Add
+            </button>
+            <button
+              @click="toggleDarkMode"
+              class="btn border-0 shadow-none theme-toggle p-0"
+              type="button"
+              aria-label="Toggle Theme"
+            >
+              <span v-if="isDarkMode" key="sun">
+                <i class="fa-solid fa-sun text-warning fs-3"></i>
+              </span>
+              <span v-else key="moon">
+                <i class="fa-solid fa-moon text-dark fs-3"></i>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Task List -->
@@ -43,11 +49,9 @@
           <thead>
             <tr>
               <th scope="col">Task</th>
-              <th scope="col" style="width: 120px">Status</th>
-              <th scope="col" class="text-center" style="width: 80px">EDIT</th>
-              <th scope="col" class="text-center" style="width: 80px">
-                DELETE
-              </th>
+              <th scope="col" class="status-col">Status</th>
+              <th scope="col" class="text-center action-col">EDIT</th>
+              <th scope="col" class="text-center action-col">DELETE</th>
             </tr>
           </thead>
           <tbody>
@@ -298,5 +302,39 @@ body {
 }
 .text-success {
   color: #28a745 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .app-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem !important;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .status-col {
+    width: 100px;
+  }
+  .action-col {
+    width: 60px;
+  }
+  .status-badge {
+    font-size: 0.8rem;
+    padding: 2px 6px;
+  }
+  .task-name {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 577px) {
+  .status-col {
+    width: 130px;
+  }
+  .action-col {
+    width: 80px;
+  }
 }
 </style>
