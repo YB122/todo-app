@@ -1,24 +1,30 @@
-# todo-app
+# 📝 Vue Todo App
 
-## Project setup
-```
+A simple and clean Todo application built with Vue.js.  
+This app allows users to add, edit, complete, and delete tasks.
+
+## 🚀 Live Demo
+🔗 https://your-live-demo-link.netlify.app
+
+## 🛠️ Built With
+- Vue.js
+- JavaScript
+- HTML5
+- CSS3
+- Vite (or Vue CLI – change if needed)
+
+## ✨ Features
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+- Responsive design
+- Local storage support (if you used it)
+
+## 📦 Installation
+To run this project locally:
+
+```bash
+git clone https://github.com/your-username/vue-todo-app.git
+cd vue-todo-app
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+npm run dev
